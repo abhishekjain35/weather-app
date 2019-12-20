@@ -41,6 +41,49 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+#input {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#button {
+  margin-top: 20px;
+  background-color: rgb(174, 0, 255);
+  border-radius: 10px;
+  border: 0;
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+#button:hover {
+  transition: 0.5s ease-in;
+  font-size: 14px;
+}
+
+#search-bar {
+  font: 15px/24px "Lato", Arial, sans-serif;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  border: 0;
+  border-bottom: 2px solid black;
+}
+
+#search-bar,#button:focus {
+  outline: 0;
+}
+
+#data {
+  text-align: left;
+  padding: 1em;
+  font-size: 20px;
+}
+
 .App {
   text-align: center;
 }
