@@ -12,23 +12,16 @@ class Weather extends Component {
   };
 
   handleSearch = async () => {
-    console.log(
-      `api.openweathermap.org/data/2.5/weather?q=${this.state.input}&APPID=1169bd3f4183d8d5de65f808e09fc2fd`
-    );
     const data = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${this.state.input}&APPID=1169bd3f4183d8d5de65f808e09fc2fd`
     );
     this.setState({ data });
-    console.log(this.state.data.data.name);
   };
 
   render() {
-    console.log(this.state.data);
     const { data } = this.state.data;
-    // if(JSON.stringify(this.state.data) !== JSON.stringify({})){
-    //   const temp = data.main.temp;
-    // }
-
+    console.log(data);
+    
     return (
       <div id="main">
         <div id="header">
@@ -57,8 +50,9 @@ class Weather extends Component {
             <div id="data">
               <p>Location : {data.name} </p>
               <p>Temperature : {Math.floor(data.main.temp - 273.15)}°C </p>
-              <p>Humidity : {data.main.humidity} </p>
               <p>Conditions : {data.weather[0].description} </p>
+              <p>Humidity : {data.main.humidity}% </p>
+              <p>Pressure : {data.main.pressure}mb </p>
             </div>
           )}
         </div>

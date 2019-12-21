@@ -1,29 +1,35 @@
 body {
-  background-color: #F4CD8B;
+  /* background-color: #F4CD8B; */
+  background-color: #2196F3;
   margin: 0;
   padding: 0;
+  font-family: 'Courier Prime', monospace;
+
 }
 
 #main {
   width: 400px;
   height: 90vh;
-  background-color: rgb(243, 231, 231);
+  /* background-color: rgb(243, 231, 231); */
+  background-color: #FF9800;
   margin: auto;
-  border-width: 5px;
-  border-style: solid;
-  border-image: linear-gradient(to right,#ff1212 0%, #7783ca 100%);
+  border: 5px solid #BDBDBD;
+  /* border-width: 5px; */
+  /* border-style: solid; */
+  /* border-image: linear-gradient(to right,#ff1212 0%, #7783ca 100%); */
   border-image-slice: 1;
   margin-top: 20px;
   text-align: center;
 }
 
 #appname {
-  color: rgb(71, 19, 19);
+  color: rgb(255, 255, 255);
   font-family: 'Nanum Gothic', sans-serif;
 }
 
 .icon {
   font-size: 40px;
+  color: white;
 }
 
 #header {
@@ -34,7 +40,7 @@ body {
 
 #card {
   width: 300px;
-  background-color: white;
+  background-color: #BBDEFB;
   height: 80%;
   margin: auto;
   border-radius: 3%;
@@ -50,38 +56,42 @@ body {
 
 #button {
   margin-top: 20px;
-  background-color: rgb(174, 0, 255);
+  background-color: #FF9800;
   border-radius: 10px;
   border: 0;
   width: 150px;
   height: 30px;
   cursor: pointer;
-  color: white;
-}
-
-#button:hover {
-  transition: 0.5s ease-in;
+  color: rgb(29, 29, 29);
   font-size: 14px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: bold;
 }
 
 #search-bar {
   font: 15px/24px "Lato", Arial, sans-serif;
-  color: #333;
+  color: rgb(34, 34, 34);
   width: 100%;
   box-sizing: border-box;
   letter-spacing: 1px;
   border: 0;
-  border-bottom: 2px solid black;
+  border-radius: 20px;
+  padding-left: 10px;
+  /* border-bottom: 2px solid #BDBDBD; */
+  /* background-color: rgb(54, 33, 33); */
+  background-color: rgb(255, 185, 79);
 }
 
 #search-bar,#button:focus {
   outline: 0;
+  background-color: rgb(255, 153, 0);
 }
 
 #data {
   text-align: left;
   padding: 1em;
   font-size: 20px;
+  color: rgb(56, 35, 35);
 }
 
 .App {
