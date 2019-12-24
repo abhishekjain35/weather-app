@@ -21,7 +21,7 @@ class Weather extends Component {
     this.setState({ data });
     const { data: latitude } = this.state.data;
     const timeZone = await axios.get(
-      `http://api.timezonedb.com/v2.1/get-time-zone?key=WEU5OKL0T4WL&format=json&by=position&lat=${latitude.coord.lat}&lng=${latitude.coord.lon}`
+      `https://api.timezonedb.com/v2.1/get-time-zone?key=WEU5OKL0T4WL&format=json&by=position&lat=${latitude.coord.lat}&lng=${latitude.coord.lon}`
     );
     this.setState({ timeZone });
   };
