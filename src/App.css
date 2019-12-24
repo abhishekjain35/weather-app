@@ -101,7 +101,9 @@ p {
 }
 
 .container {
-  text-align: right;
+  float: right;
+  clear: both;
+  padding-right: 20px;
 }
 
 .container input {
@@ -152,8 +154,24 @@ p {
 
 @media only screen and (max-width: 420px) {
   #main {
-    width: 92vw;
+    width: 91vw;
     height: initial;
     margin: 0;
+  }
+  #header {
+    margin-left: 40px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #main {
+    width: 100vw;
+    padding: 0;
+  }
+  #header {
+    margin-left: 0;
+  }
+  #temperature {
+    display: inline-block;
   }
 }

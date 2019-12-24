@@ -5,7 +5,9 @@ class Weather extends Component {
   state = {
     input: "",
     data: {},
-    timeZone: {}
+    timeZone: {},
+    isCheck: false,
+    unitOfTemp: "°C"
   };
 
   handleInput = e => {
@@ -22,6 +24,21 @@ class Weather extends Component {
       `http://api.timezonedb.com/v2.1/get-time-zone?key=WEU5OKL0T4WL&format=json&by=position&lat=${latitude.coord.lat}&lng=${latitude.coord.lon}`
     );
     this.setState({ timeZone });
+  };
+
+  handleCheckbox = e => {
+    this.setState({ isCheck: e.target.checked });
+    if(this.state.isCheck === true) {
+      const data = {...this.state.data}
+      data.data.main.temp -= 273.15
+      this.setState({unitOfTemp: "°C"})
+    }
+    else {
+      const data = {...this.state.data}
+      // console.log(this.state.data, data);
+      data.data.main.temp += 273.15
+      this.setState({unitOfTemp: "°K"})
+    }
   };
 
   render() {
@@ -56,17 +73,22 @@ class Weather extends Component {
           JSON.stringify(this.state.timeZone) !== JSON.stringify({}) && (
             <div id="data">
               <div id="location">
+                <label className="container">
+                  °K
+                  <input
+                    type="checkbox"
+                    checked={this.state.isCheck}
+                    onChange={this.handleCheckbox}
+                  />
+                  <span className="checkmark"></span>
+                </label>
                 <h2>
                   {data.name}, {data.sys.country}
                 </h2>
-                <label className="container">
-                  One
-                  <input type="checkbox" defaultChecked={false} />
-                  <span className="checkmark"></span>
-                </label>
                 <h4>
                   {now.toLocaleString(`en-${data.sys.country}`, {
-                    weekday: "long"
+                    weekday: "long",
+                    timeZone: `${this.state.timeZone.data.zoneName}`
                   })}
                   ,{" "}
                   {now.toLocaleString(`en-${data.sys.country}`, {
@@ -81,7 +103,7 @@ class Weather extends Component {
                   src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
                   alt="weather-icon"
                 />
-                <h1>{data.main.temp}°C </h1>
+                <h1>{(data.main.temp).toFixed(2)}{this.state.unitOfTemp}</h1>
               </div>
               <p>Wind speed: {data.wind.speed}Km/hr</p>
               <p>Humidity: {data.main.humidity}% </p>
