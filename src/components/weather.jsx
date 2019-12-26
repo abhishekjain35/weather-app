@@ -35,7 +35,6 @@ class Weather extends Component {
     }
     else {
       const data = {...this.state.data}
-      // console.log(this.state.data, data);
       data.data.main.temp += 273.15
       this.setState({unitOfTemp: "°K"})
     }
