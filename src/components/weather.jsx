@@ -74,13 +74,12 @@ class Weather extends Component {
             <div id="data">
               <div id="location">
                 <label className="container">
-                  °K
                   <input
                     type="checkbox"
                     checked={this.state.isCheck}
                     onChange={this.handleCheckbox}
                   />
-                  <span className="checkmark"></span>
+                  °K
                 </label>
                 <h2>
                   {data.name}, {data.sys.country}
@@ -100,7 +99,7 @@ class Weather extends Component {
               </div>
               <div id="temperature">
                 <img
-                  src={`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+                  src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
                   alt="weather-icon"
                 />
                 <h1>{(data.main.temp).toFixed(2)}{this.state.unitOfTemp}</h1>
