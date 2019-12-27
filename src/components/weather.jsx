@@ -78,7 +78,7 @@ class Weather extends Component {
                     checked={this.state.isCheck}
                     onChange={this.handleCheckbox}
                   />
-                  °K
+                  <p>°K</p>
                 </label>
                 <h2>
                   {data.name}, {data.sys.country}
