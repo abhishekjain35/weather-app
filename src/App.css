@@ -1,147 +1,153 @@
 body {
-  background-color: #BBDEFB;
-  margin: 0;
-  padding: 0;
-  font-family: 'Courier Prime', monospace;
-  box-sizing: border-box;
+    background-color: #26323f;
+    margin: 0;
+    padding: 0;
+    font-family: "Courier Prime", monospace;
+    box-sizing: border-box;
 }
 
 #main {
-  width: 400px;
-  height: 90vh;
-  background-color: #2196F3;
-  margin: auto;
-  border: 5px solid #BDBDBD;
-  border-image-slice: 1;
-  margin-top: 20px;
-  text-align: center;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  padding: 10px;
+    width: 400px;
+    height: 90vh;
+    background-color: #0a2333;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 5px 2px 5px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 5%;
 }
 
 #appname {
-  color: rgb(255, 255, 255);
-  font-family: 'Nanum Gothic', sans-serif;
+    color: rgb(226, 215, 215);
+    font-family: "Gill Sans", sans-serif;
+    margin: auto;
+    margin-top: 20px;
 }
 
 .icon {
-  font-size: 40px;
-  color: white;
+    font-size: 40px;
+    color: white;
 }
 
 #header {
-  display: flex;
-  align-items: center;
-  margin-left: 60px;
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
 }
 
 #input {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #button {
-  margin-top: 20px;
-  background-color: #BBDEFB;
-  border-radius: 10px;
-  border: 0;
-  width: 150px;
-  height: 30px;
-  cursor: pointer;
-  color: rgb(105, 97, 175);
-  font-size: 14px;
-  font-family: 'Nanum Gothic', sans-serif;
-  font-weight: bold;
+    margin-top: 20px;
+    background-color: #bbdefb;
+    border-radius: 10px;
+    border: 0;
+    width: 150px;
+    height: 30px;
+    cursor: pointer;
+    color: rgb(105, 97, 175);
+    font-size: 14px;
+    font-family: "Gill Sans", sans-serif;
+    font-weight: bold;
 }
 
 #search-bar {
-  font: 15px/24px "Lato", Arial, sans-serif;  
-  color: rgb(34, 34, 34);
-  width: 100%;
-  box-sizing: border-box;
-  letter-spacing: 1px;
-  border: 0;
-  border-radius: 20px;
-  padding-left: 10px;
-  background-color: #BBDEFB;
-  padding: 5px;
-  padding-left: 30px;
+    font: 15px/24px "Lato", Arial, sans-serif;
+    color: rgb(34, 34, 34);
+    width: 100%;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    border: 0;
+    border-radius: 20px;
+    padding-left: 10px;
+    background-color: #bbdefb;
+    padding: 5px;
+    padding-left: 30px;
 }
 
-#search-bar,#button:focus {
-  outline: 0;
+#search-bar,
+#button:focus {
+    outline: 0;
 }
 
 #data {
-  text-align: left;
-  padding: 1em;
-  font-size: 20px;
-  color: rgb(0, 0, 0);
+    text-align: left;
+    padding: 1em;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    /* background-color: #424242;
+  border-radius: 5%;
+  box-shadow: -1px 2px 5px 1px rgba(0,0,0,0.75); */
 }
 
 #temperature {
-  display: flex;
+    display: flex;
 }
 
 #location {
-  opacity: 0.6;
+    opacity: 0.8;
 }
 
-h4, h2 {
-  margin: 0px;
-  padding: 0px;
+h4,
+h2 {
+    margin: 0px;
+    padding: 0px;
 }
 
 p {
-  font-size: 1em;
-  font-weight: bold;
-  opacity: 0.7;
+    font-size: 1em;
+    font-weight: bold;
+    opacity: 0.8;
 }
 
 input[type="checkbox" i] {
-  margin: 0;
+    margin: 0;
 }
 
 .container {
-  float: right;
-  clear: both;
-  padding-right: 20px;
-  display: flex;
+    float: right;
+    clear: both;
+    padding-right: 20px;
+    display: flex;
 }
 
 .container p {
-  margin: 0px;
-  padding: 0px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .container input {
-  width: 20px;
-  height: 20px;
-  padding-top: 20px;
+    width: 20px;
+    height: 20px;
+    padding-top: 20px;
 }
 
 @media only screen and (max-width: 420px) {
-  #main {
-    width: 91vw;
-    height: initial;
-    margin: 0;
-  }
-  #header {
-    margin-left: 40px;
-  }
+    #main {
+        width: 94vw;
+        height: initial;
+        margin: 0;
+    }
+    #header {
+        margin-left: 40px;
+    }
 }
 
 @media only screen and (max-width: 300px) {
-  #main {
-    width: 100vw;
-    padding: 0;
-  }
-  #header {
-    margin-left: 0;
-  }
-  #temperature {
-    display: inline-block;
-  }
+    #main {
+        width: 100vw;
+        padding: 0;
+    }
+    #header {
+        margin-left: 0;
+    }
+    #temperature {
+        display: inline-block;
+    }
 }

@@ -16,11 +16,8 @@ class Weather extends Component {
         this.setState({ input: e.target.value });
     };
 
-    handleSearch = async () => {
-        // const data = await axios.get(
-        //   `https://api.openweathermap.org/data/2.5/weather?q=${this.state.input}&units=metric&APPID=1169bd3f4183d8d5de65f808e09fc2fd`
-        // );
-        // this.setState({ data });
+    handleSearch = async e => {
+        e.preventDefault();
         this.setState({ loading: true }, () => {
             axios
                 .get(
@@ -60,32 +57,33 @@ class Weather extends Component {
         return (
             <div id="main">
                 <div id="header">
-                    <i className="fas fa-meteor icon"></i>
                     <h1 id="appname">Weather finder</h1>
                 </div>
                 <div id="input">
-                    <input
-                        type="search"
-                        name="search"
-                        id="search-bar"
-                        placeholder="Enter your city"
-                        onChange={this.handleInput}
-                        onKeyPress={e =>
-                            e.key === "Enter" ? this.handleSearch() : null
-                        }
-                    />
-                    <button
-                        type="submit"
-                        id="button"
-                        name="search"
-                        onClick={this.handleSearch}
-                    >
-                        Get weather
-                    </button>
+                    <form onSubmit={this.handleSearch}>
+                        <input
+                            type="search"
+                            name="search"
+                            id="search-bar"
+                            placeholder="Enter your city . . ."
+                            onChange={this.handleInput}
+                        />
+                        <button
+                            type="submit"
+                            id="button"
+                            name="search"
+                        >
+                            Get weather
+                        </button>
+                    </form>
                 </div>
-                {this.state.loading ? <Loading /> : JSON.stringify(this.state.data) !== JSON.stringify({}) &&
+                {this.state.loading ? (
+                    <Loading />
+                ) : (
+                    JSON.stringify(this.state.data) !== JSON.stringify({}) &&
                     JSON.stringify(this.state.timeZone) !==
-                        JSON.stringify({}) && this.state.loading === false && (
+                        JSON.stringify({}) &&
+                    this.state.loading === false && (
                         <div id="data">
                             <div id="location">
                                 <label className="container">
@@ -132,7 +130,8 @@ class Weather extends Component {
                             <p>Humidity: {data.main.humidity}% </p>
                             <p>Pressure: {data.main.pressure}mb </p>
                         </div>
-                    )}
+                    )
+                )}
             </div>
         );
     }
