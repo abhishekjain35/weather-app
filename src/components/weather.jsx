@@ -33,8 +33,6 @@ class Weather extends Component {
                         .then(timeZone => this.setState({ timeZone }));
                 });
         });
-        // const timeZone = await ;
-        // this.setState({ timeZone });
     };
 
     handleCheckbox = e => {
@@ -61,20 +59,18 @@ class Weather extends Component {
                 </div>
                 <div id="input">
                     <form onSubmit={this.handleSearch}>
-                        <input
-                            type="search"
-                            name="search"
-                            id="search-bar"
-                            placeholder="Enter your city . . ."
-                            onChange={this.handleInput}
-                        />
-                        <button
-                            type="submit"
-                            id="button"
-                            name="search"
-                        >
-                            Get weather
-                        </button>
+                        <label>
+                            <input
+                                type="search"
+                                name="search"
+                                id="search-bar"
+                                placeholder="Enter your city . . ."
+                                onChange={this.handleInput}
+                            />
+                            <button type="submit" id="button" name="search">
+                                Get weather
+                            </button>
+                        </label>
                     </form>
                 </div>
                 {this.state.loading ? (
